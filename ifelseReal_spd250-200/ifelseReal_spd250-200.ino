@@ -14,9 +14,9 @@ uint16_t sensorValues[SensorCount];
 uint16_t position;
   
    // Base de velocidade
-  int baseSpeed = 60;
-  int turnSpeed = 120;
-  int turnSpeedM = 200;
+  int baseSpeed = 100;
+  int turnSpeed = 60;
+  int turnSpeedM = 120;
   int cavalo;
 
   // Verifica posição da linha
@@ -29,7 +29,7 @@ uint16_t position;
 boolean final = false, ligado = true, ligado2 = true, virar = false;
 int rightSensor;
 int leftSensor;
-int errorMax = 2800, errorMin = 700;
+int errorMax = 1500, errorMin = 200;
 int marcaFinal = -200, marcaVirar = 0;
 int marcaDirecao;
 
@@ -128,7 +128,7 @@ void finalizar(){
     marcaVirar = -10;
   }
 
-  if (rightSensor < 2000 && marcaFinal > 100){
+  if (rightSensor < 2200 && marcaFinal > 100){
     ligado = false;
     digitalWrite(LED_BUILTIN, HIGH);
     digitalWrite(LED_BUILTIN, LOW);
