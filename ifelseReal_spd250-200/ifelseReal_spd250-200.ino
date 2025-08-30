@@ -29,7 +29,7 @@ uint16_t position;
 boolean final = false, ligado = true, ligado2 = true, virar = false;
 int rightSensor;
 int leftSensor;
-int errorMax = 3000, errorMin = 400;
+int errorMax = 2500, errorMin = 700;
 int marcaFinal = -200, marcaVirar = 0;
 int marcaDirecao;
 
@@ -123,12 +123,12 @@ void andar(){
 void finalizar(){
   rightSensor = analogRead(15);
 
-  if (sensorValues[0] < 500 && sensorValues[7] < 500){
+  if (sensorValues[0] < 600 && sensorValues[7] < 600){
     marcaFinal = 0;
     marcaVirar = -10;
   }
 
-  if (rightSensor < 2000 && marcaFinal > 100){
+  if (rightSensor < 1600 && marcaFinal > 100){
     ligado = false;
     digitalWrite(LED_BUILTIN, HIGH);
     digitalWrite(LED_BUILTIN, LOW);
