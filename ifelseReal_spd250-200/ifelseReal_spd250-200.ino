@@ -15,7 +15,7 @@ uint16_t position;
   
    // Base de velocidade
   int baseSpeed = 60;
-  int turnSpeed = 100;
+  int turnSpeed = 120;
   int turnSpeedM = 200;
   int cavalo;
 
@@ -29,7 +29,7 @@ uint16_t position;
 boolean final = false, ligado = true, ligado2 = true, virar = false;
 int rightSensor;
 int leftSensor;
-int errorMax = 2500, errorMin = 700;
+int errorMax = 2800, errorMin = 600;
 int marcaFinal = -200, marcaVirar = 0;
 int marcaDirecao;
 
