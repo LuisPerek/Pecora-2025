@@ -14,8 +14,8 @@ uint16_t sensorValues[SensorCount];
 uint16_t position;
   
    // Base de velocidade
-  int baseSpeed = 60;
-  int turnSpeed = 120;
+  int baseSpeed = 65;
+  int turnSpeed = 130;
   int turnSpeedM = 200;
   int cavalo;
 
