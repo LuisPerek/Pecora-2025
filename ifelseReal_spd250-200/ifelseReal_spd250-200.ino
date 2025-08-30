@@ -14,8 +14,8 @@ uint16_t sensorValues[SensorCount];
 uint16_t position;
   
    // Base de velocidade
-  int baseSpeed = 70;
-  int turnSpeed = 140;
+  int baseSpeed = 60;
+  int turnSpeed = 120;
   int turnSpeedM = 200;
   int cavalo;
 
@@ -29,7 +29,7 @@ uint16_t position;
 boolean final = false, ligado = true, ligado2 = true, virar = false;
 int rightSensor;
 int leftSensor;
-int errorMax = 2800, errorMin = 600;
+int errorMax = 2800, errorMin = 700;
 int marcaFinal = -200, marcaVirar = 0;
 int marcaDirecao;
 
@@ -123,10 +123,12 @@ void andar(){
 void finalizar(){
   rightSensor = analogRead(15);
 
+  if (sensorValues[0] < 400 && sensorValues[7] < 400){
     marcaFinal = 0;
     marcaVirar = -10;
   }
 
+  if (rightSensor < 2000 && marcaFinal > 100){
     ligado = false;
     digitalWrite(LED_BUILTIN, HIGH);
     digitalWrite(LED_BUILTIN, LOW);
